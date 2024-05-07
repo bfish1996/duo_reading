@@ -4,11 +4,13 @@
 
 url = []
 
-while True:
-    url.append (input("Add your URL"))
-    add_another = input("Add another?")
-    if add_another == "T":
-        continue
-    else:
-        print(url)
-        exit()
+def show_url():
+    while True:
+        url.append (input("Add your URL"))
+        add_another = input("Add another?")
+        if add_another == "T":
+            continue
+        else:
+            print(url)
+            exit()
+    return site_url
