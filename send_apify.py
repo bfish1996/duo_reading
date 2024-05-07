@@ -1,17 +1,18 @@
 from apify_client import ApifyClient
-import url_add
+import os
 
 # Initialize the ApifyClient with your API token
 # Eventually hide API key
-client = ApifyClient("apify_api_CgXY8zpHkOgO0JSu5bDD85wdVQlbNI2HNKht")
+client = ApifyClient(os.environ.get('APIFY_KEY'))
+
+with open('urls.txt', 'r') as f:
+    urls = f.read().splitlines()
+    start_urls = [{"url": url} for url in urls]
 
 # Prepare the Actor input
 run_input = {
-    "startUrls": [{ "url": "https://news.ycombinator.com/" }],
-    "instructions": """Gets the post with the most points from the page and returns it as JSON in this format: 
-postTitle
-postUrl
-pointsCount""",
+    "startUrls": start_urls,
+    "instructions": """Create 2 quiz based questions on the article, with 4 multiple choice answers""",
 }
 
 # Run the Actor and wait for it to finish
