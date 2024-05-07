@@ -1,6 +1,7 @@
 URLS = "URLS"
 QUESTIONS = "Questions"
 
+#how to keep adding to this from the urls.txt file as it gets
 Quizzes = {
     "bbc.com": {
         "What's the score?": {"options": ["1-0", "2-0", "3-1", "4-0"], "answer": 3},
@@ -12,7 +13,7 @@ Quizzes = {
     }
 }
 
-
+#don't understand how this for loop works that chatGPT created.
 for site, questions in Quizzes.items():
     print(f"Site: {site}")
     for question, details in questions.items():
