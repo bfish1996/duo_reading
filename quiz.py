@@ -2,7 +2,7 @@ URLS = "URLS"
 QUESTIONS = "Questions"
 
 #how to keep adding to this from the urls.txt file as it gets
-Quizzes = {
+Quizzes = {site for i in   : {question}
     "bbc.com": {
         "What's the score?": {"options": ["1-0", "2-0", "3-1", "4-0"], "answer": 3},
         "What is this rabbit?": {"options": ["Cute one", "Small one", "Short one", "Thin one"], "answer": 0}

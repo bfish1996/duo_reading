@@ -34,9 +34,11 @@ run_input = {
 # Run the Actor and wait for it to finish
 run = client.actor("paOtbjvyUiNsr1Qms").call(run_input=run_input)
 
-# Fetch and print Actor results from the run's dataset (if there are any)
-for item in client.dataset(run["defaultDatasetId"]).iterate_items():
-    print(item)
+with open('urls.txt', 'a') as f:
+    # Assuming client.dataset().iterate_items() returns iterable items you want to write to a file
+    for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+        # Convert the item to a string and write it to the file, followed by a newline
+        f.write(str(item) + '\n')
 
 #I want to only show URL, question, answer, correct answer cleanly
 #I want to set all these to their own unique variable
